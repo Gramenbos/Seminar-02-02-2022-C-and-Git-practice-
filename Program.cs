@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿void FillArray(int[] array)
+{
+    var rand = new Random();
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = rand.Next(1, 100);
+    }
+}
