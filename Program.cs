@@ -23,7 +23,37 @@ string PrintArray(int[] array)
     return stringArray;
 }
 
+int EvenCounter(int[] array)
+{
+    int evenCounter = 0;
+    foreach (int item in array)
+    {
+        if (item % 2 == 0)
+        {
+            evenCounter++;
+        }
+    }
+    return evenCounter;
+}
+
+int[] GenerateNewArray(int[] array)
+{
+    int[] resultArray = new int[EvenCounter(array)];
+    int j = 0;
+    foreach (int item in array)
+    {
+        if (item % 2 == 0)
+        {
+            resultArray[j] = item;
+            j++;
+        }
+    }
+    return resultArray;
+}
+
 int[] workArray = new int[10];
 FillArray(workArray);
 string stringWorkArray = PrintArray(workArray);
-Console.WriteLine(stringWorkArray);
+int[] resultArray = GenerateNewArray(workArray);
+string stringResultArray = PrintArray(resultArray);
+Console.WriteLine(stringWorkArray + " -> " + stringResultArray);
